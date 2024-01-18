@@ -17,3 +17,5 @@ Feature: US01 Aday öğrenciler sisteme kayıt olabilmelidir.
     And kullanici Register dugmesine tiklar_AC
     And Kayit islemi basariyla tamamlanir_AC
     And Kullanici sayfayi kapatir_AC
+
+
