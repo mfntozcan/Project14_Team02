@@ -19,6 +19,7 @@ Feature: US01 Aday öğrenciler sisteme kayıt olabilmelidir.
     And Kullanici sayfayi kapatir_AC
 
 
+
   Scenario: TC02 Name Kutusu bos birakilarak sisteme kayit olunmaz
     Then kullanici surname alanina soyisim girer_AC
     And kullanici Birth Place alanina dogum yeri girer_AC
@@ -255,3 +256,4 @@ Feature: US01 Aday öğrenciler sisteme kayıt olabilmelidir.
     And kullanici Register dugmesine tiklar_AC
     And Daha once kayitli bir SSN ile kayit olunamadigini dogrular_AC
     And Kullanici sayfayi kapatir_AC
+
