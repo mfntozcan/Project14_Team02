@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
         plugin = "html:raporlar/CucumberRapor.html",
         features = "src/test/resources",
         glue ={"team02/stepDefinition", "team02/hooks"},
-        tags = "@US021_TC07",
+        tags = "@API",
         dryRun = false
 )
-public class RunnerAykut {
+public class Runner {
 }
