@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = "html:raporlar/CucumberRapor.html",
+        plugin = "html:raporlar/CucumberRaporAykut.html",
         features = "src/test/resources",
         glue ={"team02/stepDefinition", "team02/hooks"},
         tags = "@US021_TC04",
