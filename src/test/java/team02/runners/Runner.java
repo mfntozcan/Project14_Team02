@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         plugin = "html:raporlar/CucumberRapor.html",
         features = "src/test/resources",
         glue ={"team02/stepDefinition", "team02/hooks"},
-        tags = "@API",
+        tags = "@US021_TC07",
         dryRun = false
 )
 public class Runner {
