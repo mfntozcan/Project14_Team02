@@ -1,31 +1,60 @@
 @UI @US13
 Feature: Vice Dean öğretmen oluşturabilmelidir.
-  Scenario:TC01 -Vice Dean olarak basarili bir sekilde giris yapabilmeli ve ogretmen olusturma sayfasina gidilebilmelidir.
-    Given Verilen Url'ye gidin
-    Then User name kutsuna kayitli veriyi girin
-    When Password kutusuna kayitli veriyi girin
-    Then Login butonuna tiklayin
-    And Ana menüden "Teacher Management" seçeneğini tiklayin
-    And "Add Teacher" sayfasina gidin
-    And Choose Lessons kutusuna bir ders secin
-    And Name ve Surname kutusuna bir isim ve soyisim girin
-    And Birth Place kutusuna bir yer adi girin
-    And Email adresi kutusuna  bir Eposta adresi  girin
-    And Is Advisor Teacher seçeneğini işaretleyin
-    And Gender  secenegi altinda bir kutucugu isaretleyin
-    And Birth Date kutusuna bir tarih girin
-    And Ssn numarasi girin
-    And Username ktusuna bir kullanici adi girin
-    Then Password kutusuna bir sifre girin
-    When Submit butonuna tiklayin
-    But Basarili bir sekilde ogretmen olusturuldugunu dogrula
+  Background: Vice Dean Login olur
+    Given Verilen Url'ye gidilir
+    Then  Giris sayfasinda sag ust kosede logine tiklanir
+    Then User name kutsuna ViceDeanSevgi girilir
+    Then Password kutusuna "1234567890Su" girilir
+    When Login butonuna tiklanir
+    And Vice Dean hesabiyla login olunur
+    And Ana menüden Teacher Management seçeneğini tiklanir
+    And Add Teacher sayfasina gidilir
+
+
+
+
+  Scenario Outline: TC01  Vice Dean Ogretmen Olusturabilmeli
+    And Choose Lessons kutusuna bir ders secilir
+    And "<Name>" ve "<Surname>" kutusuna bir isim ve soyisim girilir
+    And "<BirthPlace>"kutusuna bir yer adi girilir
+    And "<email>" kutusuna  bir Eposta adresi  girilir
+    And "<PhoneNumber>" kutusuna  bir tel no   girilir
+    And Is Advisor Teacher seçeneğini işaretlenir
+    And "<Gender>"  secenegi altinda bir kutucugu isaretlenir
+    And "<Birth Date>" kutusuna bir tarih girilir
+    And "<Ssn numarasi>" girilir
+    And "<Username>" ktusuna bir kullanici adi girilir
+    Then "<Password>" kutusuna bir sifre girilir
+    When Submit butonuna tiklanir
+    Then Basarili bir sekilde ogretmen olusturuldugunu dogrulanir
+    And sayfayi kapatilir
+    Examples:
+      | Name |Surname | BirthPlace | email | PhoneNumber | Gender | Birth Date | Ssn numarasi | Username | Password |
+      |Sumeyra  |unlu    |Ankara  |smyr@gmail.com|222-333-1239|Female|28.01.1987  |123-34-1907   |TeacherSumeyra|123456789Su|
 
 
 
 
 
 
+  Scenario: TC02 ViceDean  name kutusunu bos birakarak ogretmen olusturamaz(-)
+    Given ViceDeanKullanici olarak name kutusu haric diger alanlari doldurun
+    Then ViceDeanKullanici name  required uyarisini gorur
+    Then Ogretmen olusturulamadigi dogrulanilir
+    And Kullanici  tarafindan sayfa kapatilir
 
+
+
+  Scenario: TC02 ViceDean  email  kutusuna "gmailcom" formatina . koymadan  yazarak ogretmen olusturabilir(bug)
+    Given ViceDeanKullanici olarak email kutusuna "smyr@gmailcom" grilir
+    Then Basarili bir sekilde ogretmen olusturuldugunu dogrulanir
+    And Kullanici  tarafindan sayfa kapatilir
+
+
+  Scenario: TC02 ViceDean  email  kutusuna "gmail.com" formatini "gxmail" yazarak ogretmen olusturabilir(bug)
+    Given ViceDeanKullanici olarak email kutusuna "smyr@gxmail.com" grilir
+    Then Basarili bir sekilde ogretmen olusturuldugunu dogrulanir
+    And Kullanici  tarafindan sayfa kapatilir
 
 
 
