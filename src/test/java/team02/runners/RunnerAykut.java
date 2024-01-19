@@ -12,5 +12,5 @@ import org.junit.runner.RunWith;
         tags = "@US021_TC07",
         dryRun = false
 )
-public class Runner {
+public class RunnerAykut {
 }
