@@ -14,12 +14,11 @@ public class Hooks {
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
     }
-/*
     @After("@UI")
-   public void tearDown(){
+    public void tearDown(){
         Driver.closeDriver();
     }
-*/
+
 
 
 }
