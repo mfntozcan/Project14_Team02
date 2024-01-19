@@ -69,4 +69,5 @@ public class AddDeanPage {
     @FindBy(xpath = "//div[@class='Toastify__toast-body']/div[.='Your surname should be at least 2 characters']") public WebElement surNameEnAzIkiKarakterIcermeliPopUp;
     @FindBy(xpath = "//div[@class='Toastify__toast-body']/div[.='Your birth place should be at least 2 characters']") public WebElement birthPlaceEnAzIkiKarakterIcermeliPopUp;
 
+
 }

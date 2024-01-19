@@ -26,45 +26,15 @@ public class AddDeanStepDefs {
     String name;
     static int userId;
 
-    @Given("Kullanici web sitesine girer")
-    public void kullaniciWebSitesineGirer() {
-        Driver.getDriver().get(ConfigReader.getProperty("manage_Url"));
-    }
 
-    @When("Kullanici login e tiklar")
-    public void kullanici_login_e_tiklar() {
-        addDean = new AddDeanPage();
-        if (addDean.loginLink.isDisplayed()) {
-            addDean.loginLink.click();
-        } else {
-            addDean.menuButton.click();
-        }
-    }
-
-    @When("Username kutusuna {string} girer")
-    public void username_i_girer(String string) {
-        addDean.usernameBox.sendKeys(string);
-    }
-
-    @When("Password kutusuna {string} girer")
-    public void password_i_girer(String string) {
-        addDean.passwordBox.sendKeys(string);
-    }
-
-    @When("Login butonuna tiklar")
-    public void login_butonuna_tiklar() {
-        ReusableMethods.clickElementByJS(addDean.loginButton);
-    }
 
     @When("Menu butonuna tiklar")
     public void menu_butonuna_tiklar() {
+        ReusableMethods.bekle(1);
         addDean.menuButton.click();
     }
 
-    @And("Dean Management butonuna tiklar")
-    public void deanManagementButonunaTiklar() {
-        addDean.deanManagementButton.click();
-    }
+
 
 
     @When("DeanName kutusuna {string} girer")
@@ -140,7 +110,7 @@ public class AddDeanStepDefs {
 
     @When("DeanUserName kutusuna {string} girer")
     public void dean_user_name_kutusuna_girer(String str) {
-        String username = faker.random().nextInt(1000,9999)+ "ali";
+        String username = faker.random().nextInt(1000,9999)+ "yusuf";
         if (str.equals("bir kullanici adi")) {
             addDean.username.sendKeys(username);
         } else {
@@ -153,11 +123,18 @@ public class AddDeanStepDefs {
         addDean.deanPassword.sendKeys("12345678Aa");
     }
 
+
+    @When("Dean password kutusunu bos birakir")
+    public void dean_password_kutusunu_bos_birakir(){addDean.deanPassword.sendKeys("");}
+
     @When("DeanSubmit butonuna tiklar")
     public void dean_submit_butonuna_tiklar() {
         addDean.deanSubmit.click();
         ReusableMethods.waitFor(2);
     }
+
+    @Then("Dean kayit yapilamadigini dogrular")
+    public void dean_kayit_yapilamadigini_dogrular(){Assert.assertTrue(addDean.deanSavedPopUp.isEnabled());}
 
     @Then("Dean kaydi yapildigi dogrulanir")
     public void dean_kaydi_yapildigi_dogrulanir() {
