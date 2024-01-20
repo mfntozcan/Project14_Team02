@@ -20,6 +20,7 @@ public class AddDeanStepDefs {
 
     ResultSet resultSet;
     AddDeanPage addDean = new AddDeanPage();
+
     Faker faker = new Faker();
     Response response;
 
@@ -163,4 +164,6 @@ public class AddDeanStepDefs {
     public void dean_kaydi_yapildigi_dogrulanir() {
         Assert.assertTrue(addDean.deanSavedPopUp.isDisplayed());
     }
+
+
 }

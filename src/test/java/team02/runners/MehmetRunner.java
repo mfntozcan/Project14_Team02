@@ -7,12 +7,13 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = "html:raporlar/CucumberRapor.html",
+        plugin = "html:raporlar/CucumberRapormehmet.html",
         features = "src/test/resources",
         glue ={"team02/stepDefinition", "team02/hooks"},
         tags = "@US08",
         dryRun = false
 )
 public class MehmetRunner {
+
 
 }
