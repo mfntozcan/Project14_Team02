@@ -20,6 +20,7 @@ public class AddDeanStepDefs {
 
     ResultSet resultSet;
     AddDeanPage addDean = new AddDeanPage();
+
     Faker faker = new Faker();
     Response response;
 
