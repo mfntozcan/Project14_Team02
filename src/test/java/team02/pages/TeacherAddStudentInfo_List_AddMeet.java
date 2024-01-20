@@ -93,4 +93,6 @@ public class TeacherAddStudentInfo_List_AddMeet {
 
     @FindBy(xpath = "(//button[@class='btn btn-danger'])[1]")
     public WebElement deleteButonuBirinciStudentInfo; // (//button[@class='btn btn-danger'])[1]
+
+
 }

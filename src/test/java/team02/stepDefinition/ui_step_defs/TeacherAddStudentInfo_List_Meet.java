@@ -285,7 +285,7 @@ public class TeacherAddStudentInfo_List_Meet {
             Driver.closeDriver();*/
 
         }
-
+/*
     @Given("teacher url gider")
     public void teacherUrlGider() {
     }
@@ -294,6 +294,8 @@ public class TeacherAddStudentInfo_List_Meet {
     public void teacherAnasayfayaGeldiginiDogrular() {
 
     }
+
+
 
     @When("teacher login yazisina tiklar")
     public void teacherLoginYazisinaTiklar() {
@@ -348,5 +350,7 @@ public class TeacherAddStudentInfo_List_Meet {
     @Then("teacher Submit butonunu girer")
     public void teacherSubmitButonunuGirer() {
     }
+
+ */
 }
 
