@@ -8,9 +8,10 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = "html:raporlar/CucumberRapor.html",
         features = "src/test/resources",
-        glue ={"team02/stepDefinition", "team02/hooks"},
-        tags = "@UI",
+        glue = {"team02/stepDefinition", "team02/hooks"},
+        tags = "@API",
         dryRun = false
 )
 public class Runner {
+
 }
