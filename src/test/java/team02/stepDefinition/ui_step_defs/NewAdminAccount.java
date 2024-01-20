@@ -101,7 +101,7 @@ public class NewAdminAccount {
 
     @When("Phone alanina \\(xxx-xxx-xxxx) formatinada no girilir")
     public void phoneAlaninaXxxXxxXxxxFormatinadaNoGirilir() {
-        adminManagement.phoneNumber.sendKeys("456-454-9784");
+        adminManagement.phoneNumber.sendKeys("456-984-9784");
     }
 
     @Then("phone alaninin bos birakilamadigi dogrulanir")
@@ -114,7 +114,7 @@ public class NewAdminAccount {
 
     @When("Ssn alanina \\(xxx-xx-xxxx) formatinda ssn girilir")
     public void ssnAlaninaXxxXxXxxxFormatindaSsnGirilir() {
-        adminManagement.ssn.sendKeys("859-23-7977");
+        adminManagement.ssn.sendKeys("679-23-7977");
     }
 
     @Then("Ssn alaninin bos birakilamadigi dogrulanir")
@@ -127,7 +127,7 @@ public class NewAdminAccount {
 
     @When("Username alanina Name bilgisi girilir")
     public void usernameAlaninaNameBilgisiGirilir() {
-        adminManagement.userName.sendKeys("Aliiyilmaz1234");
+        adminManagement.userName.sendKeys("Aliiyilmaz1278");
     }
 
     @Then("Username alaninin bos birakilamadigi dogrulanir")
