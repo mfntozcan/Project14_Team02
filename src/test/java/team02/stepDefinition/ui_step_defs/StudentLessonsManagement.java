@@ -9,7 +9,7 @@ import team02.utilities.ReusableMethods;
 
 
 public class StudentLessonsManagement {
-    team02.pages.homePage homePage=new homePage();
+    pages.HomePageAykut homePageAykut = new pages.HomePageAykut();
     team02.pages.chooseLesson chooseLesson = new chooseLesson();
     team02.pages.meetManagements meetManagements = new meetManagements();
 
@@ -127,8 +127,8 @@ public class StudentLessonsManagement {
 
     @And("ogrenci kullanici adi ve password bilgileri ile login olur")
     public void ogrenciKullaniciAdiVePasswordBilgileriIleLoginOlur() {
-        homePage.userName.sendKeys("Haci");
-        homePage.password.sendKeys("Haci123.");
-        homePage.loginButton.click();
+        homePageAykut.userName.sendKeys("Haci");
+        homePageAykut.password.sendKeys("Haci123.");
+        homePageAykut.loginButton.click();
     }
 }

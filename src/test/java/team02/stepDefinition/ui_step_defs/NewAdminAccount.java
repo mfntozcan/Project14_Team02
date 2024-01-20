@@ -5,6 +5,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import pages.HomePageAykut;
 import team02.pages.*;
 import team02.utilities.ConfigReader;
 import team02.utilities.Driver;
@@ -15,7 +16,7 @@ import java.time.Duration;
 
 public class NewAdminAccount {
 
-    homePage homePage=new homePage();
+    HomePageAykut homePageAykut = new HomePageAykut();
     chooseLesson chooseLesson = new chooseLesson();
     meetManagements meetManagements = new meetManagements();
 
@@ -27,9 +28,9 @@ public class NewAdminAccount {
     @And("Admin kullanici adi ve password bilgileri ile login olur")
     public void adminKullaniciAdiVePasswordBilgileriIleLoginOlur() {
 
-        homePage.userName.sendKeys("Pasatekir");
-        homePage.password.sendKeys("Pasa123.");
-        homePage.loginButton.click();
+        homePageAykut.userName.sendKeys("Pasatekir");
+        homePageAykut.password.sendKeys("Pasa123.");
+        homePageAykut.loginButton.click();
     }
 
     @When("kullanici acilan ekranda Admin Management butonuna tiklar")
@@ -100,7 +101,7 @@ public class NewAdminAccount {
 
     @When("Phone alanina \\(xxx-xxx-xxxx) formatinada no girilir")
     public void phoneAlaninaXxxXxxXxxxFormatinadaNoGirilir() {
-        adminManagement.phoneNumber.sendKeys("456-454-9454");
+        adminManagement.phoneNumber.sendKeys("456-454-9784");
     }
 
     @Then("phone alaninin bos birakilamadigi dogrulanir")
@@ -113,7 +114,7 @@ public class NewAdminAccount {
 
     @When("Ssn alanina \\(xxx-xx-xxxx) formatinda ssn girilir")
     public void ssnAlaninaXxxXxXxxxFormatindaSsnGirilir() {
-        adminManagement.ssn.sendKeys("859-23-4877");
+        adminManagement.ssn.sendKeys("859-23-7977");
     }
 
     @Then("Ssn alaninin bos birakilamadigi dogrulanir")
@@ -126,7 +127,7 @@ public class NewAdminAccount {
 
     @When("Username alanina Name bilgisi girilir")
     public void usernameAlaninaNameBilgisiGirilir() {
-        adminManagement.userName.sendKeys("Aliiyilmaz123");
+        adminManagement.userName.sendKeys("Aliiyilmaz1234");
     }
 
     @Then("Username alaninin bos birakilamadigi dogrulanir")
@@ -191,7 +192,7 @@ public class NewAdminAccount {
 
     @When("Kullanici menu butonuna tiklar")
     public void kullaniciMenuButonunaTiklar() {
-        homePage.menu.click();
+        homePageAykut.menu.click();
     }
 
 

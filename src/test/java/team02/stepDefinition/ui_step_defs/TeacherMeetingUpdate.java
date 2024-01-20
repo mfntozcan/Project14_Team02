@@ -12,7 +12,7 @@ import team02.utilities.ReusableMethods;
 
 
 public class TeacherMeetingUpdate {
-    team02.pages.homePage homePage=new homePage();
+    pages.HomePageAykut homePageAykut = new pages.HomePageAykut();
     team02.pages.chooseLesson chooseLesson = new chooseLesson();
     team02.pages.meetManagements meetManagements = new meetManagements();
 
@@ -26,24 +26,24 @@ public class TeacherMeetingUpdate {
 
     @When("Login butonuna tiklarr")
     public void loginButonunaTiklarr() {
-        homePage.login.click();
+        homePageAykut.login.click();
     }
 
     @And("kullanici adi ve password bilgileri ile login olur")
     public void kullaniciAdiVePasswordBilgileriIleLoginOlur() {
-        homePage.userName.sendKeys("Bilo");
-        homePage.password.sendKeys("Bilo123.");
-        homePage.loginButton.click();
+        homePageAykut.userName.sendKeys("Bilo");
+        homePageAykut.password.sendKeys("Bilo123.");
+        homePageAykut.loginButton.click();
     }
 
     @When("Kullanici menu butonuna tiklarr")
     public void kullaniciMenuButonunaTiklarr() {
-        homePage.menu.click();
+        homePageAykut.menu.click();
     }
 
     @When("kullanici meetManagemet butonuna tiklar")
     public void kullaniciMeetManagemetButonunaTiklar() {
-        homePage.meetManagementButton.click();
+        homePageAykut.meetManagementButton.click();
     }
 
     @Then("MeetList Ekraninda Date,Start Time,Stop Time ve Description kisimlarinin oldugu dogrulanir.")
@@ -144,8 +144,8 @@ public class TeacherMeetingUpdate {
 
     @And("ogretmen kullanici adi ve password bilgileri ile login olur")
     public void ogretmenKullaniciAdiVePasswordBilgileriIleLoginOlur() {
-        homePage.userName.sendKeys("fikrifikri");
-        homePage.password.sendKeys("Fikri123.");
-        homePage.loginButton.click();
+        homePageAykut.userName.sendKeys("fikrifikri");
+        homePageAykut.password.sendKeys("Fikri123.");
+        homePageAykut.loginButton.click();
     }
 }

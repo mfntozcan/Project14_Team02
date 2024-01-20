@@ -5,7 +5,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team02.utilities.Driver;
 
-
 public class HomePage {
     public HomePage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -19,37 +18,6 @@ public class HomePage {
 
     @FindBy (xpath = "//*[@class='fw-semibold text-white bg-primary navbar-toggler collapsed']")
     public WebElement menu;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //Safiye(50-150)"Contact Us" kismi ile ilgili locateler
-
     @FindBy(xpath = "//a[text()='Contact']")
     public WebElement contactLinki_AC;
 
@@ -82,6 +50,4 @@ public class HomePage {
     public WebElement contactMessageCreated_AC;
     @FindBy(xpath = "//div[@class='Toastify__toast-body']")
     public WebElement pleaseEnterValidEmailYazisi_AC;
-
-
 }
