@@ -38,6 +38,7 @@ public class StudentLessonsManagement {
         Assert.assertTrue(chooseLesson.startTime.isDisplayed());
         Assert.assertTrue(chooseLesson.stopTime.isDisplayed());
 
+
     }
 
     @When("kullanici Choose Lesson basligin altindaki secilmek istenilen ders veya dersler ikonuna tiklar")
