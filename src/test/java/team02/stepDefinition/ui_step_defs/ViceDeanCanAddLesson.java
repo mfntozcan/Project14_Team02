@@ -8,6 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
+import team02.hooks.Hooks;
 import team02.pages.MehmetPage;
 import team02.utilities.ConfigReader;
 import team02.utilities.Driver;
@@ -21,9 +22,13 @@ public class ViceDeanCanAddLesson {
     ReusableMethods reusableMethods = new ReusableMethods();
     Actions actions = new Actions(Driver.getDriver());
     Faker faker = new Faker();
+    Hooks hooks = new Hooks();
+
 
     @Given("Verilen URL'e git")
     public void verilenURLEGit() {Driver.getDriver().get(ConfigReader.getProperty("manage_Url"));
+        hooks.setup();
+
     }
 
     @When("Login linkine tıkla")
@@ -111,30 +116,30 @@ public class ViceDeanCanAddLesson {
     @When("Submit butonu tıklayın")
     public void submitButonuTıklayın() {
         mehmetPage.submitButton.click();
-        ReusableMethods.bekle(1);
 
     }
 
     @Then("Lesson created mesajı görüldüğünü dogrula")
-    public void lessonCreatedMesajıGörüldüğünüDogrula() {
-        ReusableMethods.bekle(2);
+    public void lessonCreatedMesajıGörüldüğünüDogrula() throws InterruptedException {
         Assert.assertTrue(mehmetPage.lessonCreatedyazisi.isDisplayed());
     }
+
 
     @And("Lesson Name kısmını bos bırakın yada tek bir harf yazın")
     public void lessonNameKısmınıBosBırakınYadaTekBirHarfYazın() {
 
     }
 
-    @Then("Lesson created mesajı görülmediğini dogrula")
-    public void lessonCreatedMesajıGörülmediğiniDogrula() {
 
-
-    }
+  //  @Then("Lesson created mesajı görülmediğini dogrula")
+  //  public void lessonCreatedMesajıGörülmediğiniDogrula() throws InterruptedException {
+  //      Assert.assertFalse(mehmetPage.lessonCreatedyazisi.getText().equals("login"));
+  //  }
 
 
     @When("Add Lesson sayfası görülmeli")
-    public void addLessonSayfasıGörülmeli() {
+    public void addLessonSayfasıGörülmeli()throws InterruptedException{
+        Assert.assertTrue(mehmetPage.addLessonSayfasi.isDisplayed());
     }
 
     @Then("Compulsory kutucugunu işretlemeyin")
@@ -142,4 +147,17 @@ public class ViceDeanCanAddLesson {
 
 
     }
+
+    @Then("Lesson name required mesajını dogrula")
+    public void lessonNameRequiredMesajınıDogrula() {
+        Assert.assertTrue(mehmetPage.required.isDisplayed());
+    }
+    @And("sayfayi kapatir")
+    public void sayfayiKapatir() {
+
+        Driver.closeDriver();
+
+    }
+
+
 }

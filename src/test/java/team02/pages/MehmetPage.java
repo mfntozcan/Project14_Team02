@@ -10,11 +10,11 @@ public class MehmetPage {
 
 
     public MehmetPage() {
-            PageFactory.initElements(Driver.getDriver(), this);}
+        PageFactory.initElements(Driver.getDriver(), this);}
 
 
 
-    @FindBy(xpath = "//a[@class='header_link ms-2']") public WebElement loginButton;
+    @FindBy(xpath = "//*[@class='header_link ms-2']") public WebElement loginButton;
     @FindBy(xpath = "(//input[@class='form-control'])[1]") public WebElement userNameBox;
 
     @FindBy(id = "password") public WebElement passwordBox;
@@ -23,12 +23,12 @@ public class MehmetPage {
 
     @FindBy(xpath = "//*[@id='controlled-tab-example-tab-lessonsList']") public WebElement lessonButtonTikla;
 
-   // @FindBy(xpath = "//button[text()='Menu']") public WebElement menuButton;
+    // @FindBy(xpath = "//button[text()='Menu']") public WebElement menuButton;
     @FindBy(xpath = "(//button[@aria-label='Toggle navigation'])[1]") public WebElement menuButton;
- //  @FindBy(xpath = "//button[@aria-controls='offcanvasNavbar-expand-false']") public WebElement menuButton;
+    //  @FindBy(xpath = "//button[@aria-controls='offcanvasNavbar-expand-false']") public WebElement menuButton;
 
 
- @FindBy(xpath = "//*[@id=\"offcanvasNavbar-expand-lg\"]/div[2]/div/a[1]") public WebElement lessonManagementGiris;
+    @FindBy(xpath = "//a[.='Lesson Management']") public WebElement lessonManagementGiris;
 
     @FindBy(xpath = "//button[@id='controlled-tab-example-tab-lessonsList']") public WebElement lesson;
 
@@ -46,6 +46,12 @@ public class MehmetPage {
 
 
     @FindBy(xpath = "//*[@*='Toastify__toast-container Toastify__toast-container--top-center']") public WebElement lessonCreatedyazisi;
+
+    @FindBy(xpath = "(//h5[@bg='primary'])[2]") public WebElement addLessonSayfasi;
+
+    @FindBy(xpath = "(//div[@class='invalid-feedback'])[4]") public WebElement required;
+
+
 
 
 //div[@class='Toastify__toast-body']

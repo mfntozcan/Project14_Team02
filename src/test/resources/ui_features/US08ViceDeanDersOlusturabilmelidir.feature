@@ -18,6 +18,9 @@
       When  Submit butonu tıklayın
       Then Lesson created mesajı görüldüğünü dogrula
 
+      And sayfayi kapatir
+
+
 
     Scenario: TC02 Vice Dean Lesson Name kutusunu bos birakarak yada tek bir harf yazarak Ders kaydını  olusturamamalidir.
 
@@ -34,8 +37,10 @@
       And Compulsory kutucugunu işretleyin
       And Credit Score kısmına bir Score girin
       When Submit butonu tıklayın
-      Then Lesson created mesajı görülmediğini dogrula
+      Then Lesson name required mesajını dogrula
 
+
+      And sayfayi kapatir
 
 
 
@@ -54,3 +59,5 @@
       When  Submit butonu tıklayın
       Then Lesson created mesajı görüldüğünü dogrula
 
+
+      And sayfayi kapatir

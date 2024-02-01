@@ -36,5 +36,7 @@ public class ViceDeanAddLessonProgramPage {
     public WebElement addLessonProgramSubmit;
     @FindBy(xpath = "(//tbody)[4]//tr")
     public List<WebElement> lessonProgramAssignmentList;
+
+
 }
 
