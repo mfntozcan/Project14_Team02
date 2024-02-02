@@ -14,18 +14,14 @@
 
 
       Scenario: TC02 Vice Dean, mesajları, yazarlarını, e-maillerini, gönderilme tarihi ve  subject bilgilerini görüntüleyebilmelidir
-     Given Verilen URL'e git
-     When Login linkine tıkla
-     And Username kısmına gecerli bir veri gir
-     And Password kutusuna gecerli bir şifre gir
-     And Vice Dean olarak uygulamaya giriş yap
-     When Menu butonuna tikla
-     When Contact Get All secenegini tıkla
-     Then Mesaj yazanının isminin göründügünü dogrula
-     Then Mesaj yazanının Email inin göründügünü dogrula
-     Then Mesaj tarihinin göründügünü dogrula
-     Then Mesaj Subject acıklamasını dogrula
-     Then Mesajın ne oldugunu dogrula
+        Given Verilen URL'e git
+        When Menu butonuna tikla
+        When Main Menu den Contact Get All linkine tıkla
+        Then Name bilgilerinin göründüğünü dogrula
+        Then Email  bilgilerinin göründüğünü dogrula
+        Then Date  bilgilerinin göründüğünü dogrula
+        Then Subject  bilgilerinin göründüğünü dogrula
+        Then Message  bilgilerinin göründüğünü dogrula
 
         Scenario: TC03 Vice Dean mesajları silebilmelidir.
 
@@ -35,5 +31,5 @@
        And Password kutusuna gecerli bir şifre gir
        And Vice Dean olarak uygulamaya giriş yap
        When Menu butonuna tikla
-       When Contact Get All secenegini tıkla
-       Then Mesaj silme butonu oldugunu dogrula
+          When Main Menu den Contact Get All linkine tıkla
+          Then Silme Butonunun göründüğünü doğrula
